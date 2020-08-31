@@ -1,6 +1,5 @@
-# GameOfLife
+# Conway's Game of Life
 
-Conway's Game of Life
 The game of life gets updated by the following rules:<br>
 1. Cells with less then 2 neighbours die<br>
 2. Dead cell with 3 live neighbours become alive<br>
