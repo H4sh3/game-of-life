@@ -1,9 +1,8 @@
 class Game {
-    constructor(width) {
-        this.width = width;
+    constructor() {
         this.size = 50;
         this.running = true;
-        this.reset();
+        this.init();
     }
 
     update() {
@@ -15,35 +14,35 @@ class Game {
         }
     }
 
-    run(){
+    run() {
         this.running = !this.running;
     }
 
-    reset() {
+    init() {
         this.field = [];
-        for (let y = 0; y < this.size - 3; y++) {
+        for (let y = 0; y < this.size; y++) {
             this.field.push([]);
-            for (let x = 0; x < this.size - 3; x++) {
+            for (let x = 0; x < this.size; x++) {
                 this.field[y].push(random([true, false]));
             }
         }
     }
 
     draw = () => {
-        let w = this.width / this.size;
-        let h = this.width / this.size;
+        let w = width / this.size;
+        let h = width / this.size;
 
         stroke(0);
-        strokeWeight(0.1);
+        strokeWeight(0.3);
 
-        for (let y = 1; y < this.field.length - 1; y++) {
-            for (let x = 1; x < this.field[y].length - 1; x++) {
+        for (let y = 0; y < this.field.length; y++) {
+            for (let x = 0; x < this.field[y].length; x++) {
                 if (this.field[y][x]) {
                     fill(0);
                 } else {
                     fill(255);
                 }
-                rect(x + x * w, y + y * h, w, h);
+                rect(x * w, y * h, w, h);
             }
         }
     }
@@ -75,7 +74,7 @@ class Game {
         }
         return changes;
     }
-    
+
     numNeighbours = (f, x, y) => {
         let count = 0;
         for (let i = -1; i <= 1; i++) {
@@ -83,7 +82,7 @@ class Game {
                 if (i === 0 && j === 0) {
                     continue;
                 }
-    
+
                 if (f[y + i] && f[y + i][x + j]) {
                     count += 1;
                 }
