@@ -3,7 +3,8 @@
 <html>
 
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.css"
+        rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
     <script src="game.js"></script>
     <script src="script.js"></script>
@@ -27,27 +28,34 @@
     <div class="container">
         <center>
             <div class="is-size-5" style="margin-top:1rem">
-                <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Game of life</a>
+                <a
+                    href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Game
+                    of life</a>
             </div>
             <div class="box">
                 <div class="canvas-div" id="p5canvas"></div>
                 <div class="level-item">
-                    <button class="button is-info" type="text" onclick="game.run()">Run</button>
+                    <button class="button is-info" type="text"
+                        onclick="game.run()">Run</button>
                     <div style="width: 2rem"></div>
-                    <button class="button is-info" type="text" onclick="game.init()">Reset</button>
+                    <button class="button is-info" type="text"
+                        onclick="game.init()">Reset</button>
                     <div style="width: 2rem"></div>
-                    <button class="button is-success" type="text" onclick="changeFrameRate(5)">Faster</button>
+                    <button class="button is-success" type="text"
+                        onclick="changeFrameRate(5)">Faster</button>
                     <div style="width: 2rem"></div>
-                    <button class="button is-danger" type="text" onclick="changeFrameRate(-5)">Slower</button>
+                    <button class="button is-danger" type="text"
+                        onclick="changeFrameRate(-5)">Slower</button>
                     <div style="width: 2rem"></div>
                 </div>
                 <div class="level-item">
                     <p style="margin:1rem; text-align: justify">
                         <b>Description</b><br>
-                        The game of life gets updated by the following rules:<br>
-                            1. Cells with less then 2 neighbours die<br>
-                            2. Dead cell with 3 live neighbours become alive<br>
-                            3. Cells with more then 3 neighbours die<br>
+                        The grid gets updated by the following rules:<br />
+                        1. Cells with less then 2 neighbours die<br />
+                        2. A dead cell with 3 live neighbours becomes
+                        alive<br />
+                        3. Cells with more then 3 neighbours die<br />
                         <a href="https://github.com/H4sh3/GameOfLife">Code</a>
                     </p>
                 </div>
